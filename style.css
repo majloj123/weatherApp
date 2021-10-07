@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+    --bg_main: #0a1f44;
+    --text_light: #fff;
+    --text_med: #53627c;
+    --text_dark: #1e2432e1;
+    --red: #4a82e9;
+    --darkred: #c3112d;
+    --orange: #ff8c00;
+}
+   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    font: 1rem/1.3 "Roboto", sans-serif;
+    color: var(--text_dark);
+    padding: 0px;
+    background: gainsboro;
+    height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+    
+input {
+    -webkit-appearance: none;
+}
+    
+button,input {
+    border: none;
+    background: none;
+    outline: none;
+    color: inherit;
+}
+   
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+   
+ul {
+    list-style: none;
+}
+
+/* Nav style */
+
+.top-banner {
+    color: var(--text_light);
+    text-align: center;
+    font-size: 80%;
+}
+ 
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(144, 201, 208), rgb(60, 105, 211));
+    flex-wrap: wrap;
+    padding: 0.3em 1.3em;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 4rem;
+    letter-spacing: 0.02em;
+    padding: 0.2em;
+}
+   
+.top-banner form {
+    position: relative;
+    padding: 0.3em;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+   
+.top-banner form input {
+    padding: 0.3em;
+    border: 1px solid #8dbac0;
+    border-radius: 8px 0 0 8px;
+    font-size: 1.3em;
+    margin: 0;
+}
+   
+.top-banner form input::placeholder {
+    color: rgb(202, 194, 194); 
+}
+   
+.top-banner form button {
+    font-weight: bold;
+    font-size: 1.3em;
+    letter-spacing: 0.1em;
+    padding: 0.3em;
+    border: 1px solid rgb(32, 131, 212);
+    border-radius: 0 8px 8px 0;
+    background: var(--red);
+    transition: background 0.3s ease-in-out;
+}
+   
+.top-banner form button:hover {
+    background: #0a1f44;
+}
+   
+.top-banner form .popUp {
+    position: absolute;
+    bottom: -40px;
+    left: -50px;
+    padding: 0.6em;
+    color: white;
+}
+
+/* weather prifle */
+
+.ajax-section {
+    padding: 50px;
+    background: gainsboro;
+  }
+   
+.ajax-section .cities {
+    display: grid;
+    grid-gap: 32px 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.ajax-section .city {
+    background: url('https://images.unsplash.com/photo-1592210454359-9043f067919b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80') no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 30px 30px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+   
+.ajax-section figure {
+    border-radius: 6px;
+    text-align: center;
+    padding: 1em;
+}
+
+.ajax-section img {
+    margin: 2px auto;
+}
+
+.ajax-section figcaption {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+   
+.ajax-section .city-name {
+    background: linear-gradient(to bottom, rgb(144, 201, 208), rgb(60, 105, 211));   
+    border-radius: 6px;
+    padding: 0.2em 0.5em;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.ajax-section .city-temp {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text_dark);
+}
+   
+.ajax-section .city sup {
+    font-size: 0.5em;
+}
+   
+.ajax-section .city-name sup {
+    padding: 0.2em 0.6em;
+    border-radius: 30px;
+    color: #0a1f44;
+    background: white;
+}
+   
+.ajax-section .city-icon {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.ajax-section .city button.delete {
+    padding: 0.5em;
+    float: right;
+}
+
+.ajax-section .city i {
+    display: inline;
+    font-size: 2em;
+    padding-bottom: 0.5em;
+}
+
+.ajax-section .city i:hover {
+    cursor: pointer;
+    color: var(--text_dark);
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2em 4em;
+    align-items: center;
+    color: #6c757d;
+    background: rgb(47,47,47);
+}
+
+footer h4, footer a {
+    color: #7378c5;
+}
+
+div {
+    text-align: center;
+}
+
+
+/* Media Q */
+
+@media screen and (max-width: 1150px) { 
+    .ajax-section .cities {
+      grid-template-columns: repeat(3, 1fr);
+      
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .container1 {
+        flex-direction: column;
+    }
+    
+    .top-banner form {
+      padding-bottom: 4rem;
+    }
+   
+     
+    .top-banner form .popUp {
+      position: static;
+      max-width: none;
+      min-height: 0;
+      margin-top: 10px;
+    }
+
+    .top-banner {
+        width: 100vw;
+        font-size: 80%;
+    }
+
+    .top-banner form .popUp {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    .ajax-section {
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .ajax-section .cities {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 20px;
+    }  
+
+    .ajax-section .city-temp {
+        float: left;
+    }
+
+    .ajax-section figure {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .top-banner {
+        font-size: 70%;
+        letter-spacing: 0;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .top-banner form {
+        padding-bottom: 4em;
+    }
+}
